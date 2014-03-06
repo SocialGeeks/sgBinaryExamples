@@ -1,17 +1,21 @@
-CC:=$(CC) -m32 -fno-builtin
+CC:=$(CC) -m32
 AS:=$(AS) --32
+CFLAGS:=-fno-builtin
 
 executeable : libc.o source.obj 
-	$(CC) -o $@ -nostdlib $^
+	$(CC) $(CFLAGS) -o $@ -nostdlib $^
 
 source.obj : source.asm
-	$(AS) -o $@ $<
+	$(AS) $(FCLAGS) -o $@ $<
 
 source.asm : source.c
-	$(CC) -S -o $@ $<
+	$(CC) $(CFLAGS) -S -o $@ $<
+
+smash : smash.c
+	$(CC) -o $@ $<
 
 .PHONY : clean
 
 clean : 
-	$(RM) libc.o source.obj source.asm
+	$(RM) libc.o source.obj source.asm smash
 
