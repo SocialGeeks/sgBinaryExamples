@@ -2,7 +2,7 @@ CC:=$(CC) -m32
 AS:=$(AS) --32
 CFLAGS:=-fno-builtin
 
-executeable : libc.o source.obj 
+executable : libc.o source.obj 
 	$(CC) $(CFLAGS) -o $@ -nostdlib $^
 
 source.obj : source.asm
