@@ -6,7 +6,11 @@ int smashable(char* s) {
     /** We will let brian show us how this can be usfull **/
     char val[10];
     strcpy(val,s);
-    printf("OK");
+    printf("Loaded\n");
+}
+
+int unreachabl() {
+    printf("You Win!\n");
 }
 
 int main(int argc, char **argv) {

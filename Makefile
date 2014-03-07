@@ -17,5 +17,5 @@ smash : smash.c
 .PHONY : clean
 
 clean : 
-	$(RM) libc.o source.obj source.asm smash
+	$(RM) libc.o source.obj source.asm executable smash
 
